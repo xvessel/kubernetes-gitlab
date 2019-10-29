@@ -31,7 +31,7 @@ spec:
         - name: GITLAB_SECRETS_OTP_KEY_BASE
           value: long-and-random-alpha-numeric-string
         - name: GITLAB_ROOT_PASSWORD
-          value: root
+          value: admin321
         - name: GITLAB_ROOT_EMAIL
           value: sky_big@yeah.net
         - name: GITLAB_HOST
@@ -105,6 +105,8 @@ spec:
     - name: ssh
       port: 22
       targetPort: 22
+      nodePort: 30022
+  type: NodePort
   selector:
     app.kubernetes.io/name: gitlab-system
     app.kubernetes.io/part-of: gitlab
